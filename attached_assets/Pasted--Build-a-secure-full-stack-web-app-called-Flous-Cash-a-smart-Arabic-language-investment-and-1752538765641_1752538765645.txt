@@ -1,0 +1,211 @@
+)
+
+Build a secure, full-stack web app called **Flous Cash** — a smart Arabic-language investment and funding platform, inspired by modern banking and fintech HYIP-style experiences. The platform should offer 10-day fixed investment plans with high returns, referral rewards, real-time withdrawals ticker, and beautiful interactive glassmorphism UI.
+
+---
+
+🧰 Tech Stack:
+- React + TypeScript + Tailwind CSS (Frontend)
+- Next.js API Routes or Node.js + Express (Backend)
+- PostgreSQL + Prisma (or SQLite for Replit)
+- JWT + bcrypt for authentication
+- PDF contract generation with `pdf-lib` or `html-pdf`
+- Real-time currency API from exchangerate.host
+- Admin alerts using Telegram Bot
+- Hosting: GitHub + Vercel or Replit
+
+---
+
+🎨 Design / UI Style:
+- Inspired by the provided layout (image reference)  
+- **Glassmorphism** UI with blue gradient background  
+- Rounded cards, blur, glow effects  
+- Arabic RTL layout with modern fonts (Cairo / IBM Plex Arabic)  
+- Floating buttons, glowing CTAs, soft hover animations  
+- Section layout:
+  - 🟦 Hero: welcome message, scrolling ticker of withdrawals
+  - 🧾 Two service blocks (تمويل سريع + إحالة)
+  - 📈 Investment plans in 4 floating boxes
+  - 🔻 Bottom: trusted partners (Vodafone Cash, Egypt Post, etc.)
+
+---
+
+📈 Investment Plans (10-Day Fixed Return):
+
+| Plan Name       | Return % | Example (100 EGP) |
+|----------------|----------|-------------------|
+| Quick Boost     | 30%      | 130 EGP           |
+| Fast Rise       | 50%      | 150 EGP           |
+| Double Return   | 100%     | 200 EGP           |
+| Power Investor  | 120%     | 220 EGP           |
+| Elite Plus      | 200%     | 300 EGP           |
+
+Each card includes:
+- Plan name + return %
+- Amount calculator
+- Days countdown
+- CTA: “فعّل استثمارك دلوقتي”
+- Notice:
+
+برجاء تحويل المبلغ على فودافون كاش
+الرقم المعتمد: 01026751430
+
+---
+
+🧾 PDF Contract:
+- Arabic legal-style contract per investment
+- Includes:
+- User name
+- National ID
+- Plan name
+- Amount + Return
+- Start date, duration
+- Digital seal: "تم التوثيق"
+- Tracking number (e.g., FLSX-2025-XYZ)
+- Download + optional email delivery
+
+---
+
+🧲 Scrolling Profit Ticker:
+- Simulate withdrawals from Egyptian users
+- Update every 10–15 seconds with:
+
+💸 منى من الجيزة سحبت 460 جنيه من خطة Fast Rise ✅ 💰 مصطفى من المنصورة استلم 1200 جنيه من Power Investor
+
+- Animate right-to-left scroll bar
+- Random names + cities + amounts
+
+---
+
+🏗️ Projects Section:
+Section Title: “مشاريع بنستثمر فيها”
+
+Examples:
+- 🏢 Aswan school renovation — 85,000 EGP funded  
+- 🌱 Cairo rooftop farms — 60,000 EGP  
+- 🚚 Alexandria delivery fleet — 130,000 EGP  
+- ☕ Cafe chain in New Cairo — 100,000 EGP  
+- 🧴 Herbal cosmetics – Qena — 75,000 EGP  
+
+Each shows:
+- Status: جاري التنفيذ / تم التوثيق
+- Funding progress bar
+- Button: “شوف التفاصيل”
+
+---
+
+📊 Real-Time Currency Chart:
+- Fetch EGP rates from exchangerate.host:
+
+GET https://api.exchangerate.host/latest?base=EGP&symbols=USD,EUR,SAR
+
+- Refresh every 15 sec
+- Display using Chart.js / Recharts
+- Arabic title: “أسعار العملات الآن”
+
+---
+
+🧑‍💼 User Features:
+- Register/login with email/phone + password
+- Dashboard shows:
+- Active plans + countdown
+- Contract downloads
+- Referral earnings
+- Support messages
+- Profile editing
+
+---
+
+🗣️ Testimonials:
+- Display recent feedback from real/fake users like:
+- “الفلوس وصلت زي ما وعدتوا”
+- “العقد كان احترافي جدًا”
+- “خدمة محترمة وناس بترد بسرعة”
+
+- Stars + location + time (e.g., أحمد من المنصورة – من 3 أيام)
+
+---
+
+📩 Telegram Bot:
+Use:
+
+BOT TOKEN: 8118081962:AAELBJyLNDzvGVYux_4EGJVuhDv3I2ms3Uk
+
+Trigger message on new investment:
+
+🧾 استثمار جديد
+
+📛 الاسم: [User]
+💼 الخطة: Power Investor
+💰 المبلغ: 1500 جنيه
+📅 تاريخ البدء: 15 يوليو
+✅ التحويل تم إلى: 01026751430
+📄 رقم العقد: FLSX-20250715-0019
+
+---
+
+🔐 Admin Dashboard:
+- Login as admin
+- View all users & investments
+- Review manual payments
+- Approve/reject contracts
+- Export reports
+- Moderate testimonials
+- See contact tickets
+
+---
+
+📞 Contact & Support:
+- Live Telegram button  
+- Submit ticket form: name, phone, message  
+- Auto ticket ID (FLS-SUP-2025-0123)  
+- FAQ:
+  - "هل الأرباح مضمونة؟"
+  - "فين العقد بتاعي؟"
+  - "لو اتأخرت الأرباح أعمل إيه؟"
+
+---
+
+🔐 Security:
+- JWT auth + bcrypt password hashing
+- Secrets in `.env.local`
+- All fields validated
+- Prevent XSS, SQLi, spam
+- Rate-limit forms and plan submissions
+
+---
+
+📜 Legal + Policy:
+Show usage notice:
+
+⚠️ فلوس كاش ليست بنكًا، الأرباح تتوقف على أداء المشاريع. الاستثمار على مسؤوليتك بعد الموافقة على الشروط والأحكام.
+
+Add pages:
+- سياسة الاستخدام  
+- سياسة الخصوصية  
+- ملف المخاطر
+
+---
+
+🎯 Main Goal:
+
+- Offer believable, exciting financial opportunities  
+- Avoid the word "HYIP" — present it as a smart modern tool  
+- Create an emotional UI: glassy, moving, glowing  
+- Arabic (Egyptian dialect) throughout:
+  - “عقدك في جيبك”  
+  - “ابدأ بـ ١٠٠ جنيه”  
+  - “استلم أرباحك بعد ١٠ أيام”  
+- Make users feel it's real, active, and growing
+
+---
+
+🖼️ Visuals:
+Match the UI shown in the attached reference image:  
+- Welcome section  
+- Investment plan cards  
+- Real partners logos  
+- Referral section  
+- Withdrawals ticker  
+- Blue + silver with floating light design
+
